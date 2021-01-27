@@ -1,0 +1,117 @@
+% Digital Logic Report Template
+% Created: 2020-01-10, John Miller
+
+%==========================================================
+%=========== Document Setup  ==============================
+
+% Formatting defined by class file
+\documentclass[11pt]{article}
+
+% ---- Document formatting ----
+\usepackage[margin=1in]{geometry}	% Narrower margins
+\usepackage{booktabs}				% Nice formatting of tables
+\usepackage{graphicx}				% Ability to include graphics
+
+%\setlength\parindent{0pt}	% Do not indent first line of paragraphs 
+\usepackage[parfill]{parskip}		% Line space b/w paragraphs
+%	parfill option prevents last line of pgrph from being fully justified
+
+% Parskip package adds too much space around titles, fix with this
+\RequirePackage{titlesec}
+\titlespacing\section{0pt}{8pt plus 4pt minus 2pt}{3pt plus 2pt minus 2pt}
+\titlespacing\subsection{0pt}{4pt plus 4pt minus 2pt}{-2pt plus 2pt minus 2pt}
+\titlespacing\subsubsection{0pt}{2pt plus 4pt minus 2pt}{-6pt plus 2pt minus 2pt}
+
+% ---- Hyperlinks ----
+\usepackage[colorlinks=true,urlcolor=blue]{hyperref}	% For URL's. Automatically links internal references.
+
+% ---- Code listings ----
+\usepackage{listings} 					% Nice code layout and inclusion
+\usepackage[usenames,dvipsnames]{xcolor}	% Colors (needs to be defined before using colors)
+
+% Define custom colors for listings
+\definecolor{listinggray}{gray}{0.98}		% Listings background color
+\definecolor{rulegray}{gray}{0.7}			% Listings rule/frame color
+
+% Style for Verilog
+\lstdefinestyle{Verilog}{
+	language=Verilog,					% Verilog
+	backgroundcolor=\color{listinggray},	% light gray background
+	rulecolor=\color{blue}, 			% blue frame lines
+	frame=tb,							% lines above & below
+	linewidth=\columnwidth, 			% set line width
+	basicstyle=\small\ttfamily,	% basic font style that is used for the code	
+	breaklines=true, 					% allow breaking across columns/pages
+	tabsize=3,							% set tab size
+	commentstyle=\color{gray},	% comments in italic 
+	stringstyle=\upshape,				% strings are printed in normal font
+	showspaces=false,					% don't underscore spaces
+}
+
+% How to use: \Verilog[listing_options]{file}
+\newcommand{\Verilog}[2][]{%
+	\lstinputlisting[style=Verilog,#1]{#2}
+}
+
+
+
+
+%======================================================
+%=========== Body  ====================================
+\begin{document}
+
+\title{ELC 2137 Lab \#\#: Lab 2 Transistor Logic Gates}
+\author{Sam Jeffrey}
+
+\maketitle
+
+
+\section*{Summary}
+
+In this lab I familurized myself with diffrent logic gates and was introducded to transistors. Using pushbuttons AND and OR gate circuits where created. Using push buttons allowed for easy understanding of these diffrent gates. For an AND gate both push buttons are in series, because the push buttons are normaly open (meaning they do not allow current through) when they are both pushed down current can pass through the gate. For an OR gate the two push buttons are connected in parrallel, therefore when one button is pressed current can pass through and iluminate the light. These push button circuits work great with physical inputs but are not effective when it comes to electrical inputs. Transistors allow for electrical signals to be the input to the circuit rather than physcial inputs. Transistors are extreamly complicated electrical componutes but can be broked down into three basic parts the collector, the base, and the emitter. In a very simple explination of how transistors work is that when current comes into the base it causes the resistance from the collector to the emitter to be extreamly low. Therefore, current will follow the path of least resistance and go through the emitter. But if no current comes into the base the resistence from the collector to the emitter is basically infinite. Therefore the current will skip over the collector and emitter and go to the rest of the circuit. Using these transistors we can create logic gates that use electrical inputs. 
+
+
+\section*{Q\&A}
+
+\begin{enumerate}
+	\item What Logic operation does the final gate implement?
+	
+	The final logic gate is an AND gate.
+\end{enumerate}
+
+\section*{Results}
+
+\begin{table}[ht]\centering
+	\caption{Truth table for final gate}
+	\label{tbl:example_table}
+	\begin{tabular}{cc|c}
+		\toprule
+		A & B & AND \\
+		\midrule
+		0 & 0 & 0 \\
+		0 & 1 & 0 \\
+		1 & 0 & 0 \\
+		1 & 1 & 1 \\
+		\bottomrule
+	\end{tabular} 
+\end{table}
+
+\begin{figure}[ht]\centering
+	\includegraphics[angle = 270,width=1\textwidth,trim=5cm 5cm 5cm 5cm,clip]{IMG_0153.jpg}
+	\caption{This is an image of my signitures and the Inverter gate}
+	\label{fig:image}		% label must be after caption
+\end{figure}
+
+\begin{figure}[ht]\centering
+	\includegraphics[angle = 270,width=1\textwidth,trim=4cm 10cm 10cm 20cm,clip]{IMG_0154.jpg}
+	\caption{This is an Image of a NOR and the Final gate}
+	\label{fig:image}		% label must be after caption
+\end{figure}
+
+\clearpage
+\section*{Code}
+
+There was no code required for this lab.
+
+
+\end{document}
